@@ -19,6 +19,21 @@ namespace TimeLord_Klimov
         public MainWindow()
         {
             InitializeComponent();
+
+            OpenPages(pages.stopwatch);
+        }
+
+        public enum pages
+        {
+            stopwatch
+        }
+
+        public void OpenPages(pages _page)
+        {
+            if (_page == pages.stopwatch)
+            {
+                frame.Navigate(new Pages.Stopwatch());
+            }
         }
     }
 }
