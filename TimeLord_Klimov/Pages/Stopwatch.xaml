@@ -5,15 +5,22 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TimeLord_Klimov.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="410" d:DesignWidth="782"
+      d:DesignHeight="410" d:DesignWidth="782" MinHeight="410" MinWidth="782" MaxHeight="410" MaxWidth="782"
       Title="Stopwatch">
 
     <Grid Background="PeachPuff">
-        <Label x:Name="time" Content="00.00.00" HorizontalAlignment="Center" VerticalAlignment="Center"
-               Margin="299,95,299,242" Foreground="DarkSlateGray" FontSize="48"/>
-        <Button x:Name="start" Click="StartStopwatch" Content="Начать" HorizontalAlignment="Center" VerticalAlignment="Center"
-               Margin="280,312,402,72" Width="100" Height="25" Background="White" Foreground="DarkSlateGray"/>
-        <Button Content="Интервал" HorizontalAlignment="Center" VerticalAlignment="Center"
-               Margin="410,312,272,72" Width="100" Height="25" Background="White" Foreground="DarkSlateGray"/>
+        <Label x:Name="time" Content="00.00.00"
+               Margin="137,82,459,254" Foreground="DarkSlateGray" FontSize="48"/>
+        <Button x:Name="start" Click="StartStopwatch" Content="Начать" HorizontalAlignment="Left" VerticalAlignment="Top"
+               Margin="118,299,0,0" Width="100" Height="25" Background="White" Foreground="DarkSlateGray"/>
+        <Button Content="Интервал" x:Name="remember" Click="RecordTime" HorizontalAlignment="Left" VerticalAlignment="Top"
+               Margin="248,299,0,0" Width="100" Height="25" Background="White" Foreground="DarkSlateGray"/>
+        <ListView x:Name="lv_seconswitch" Margin="478,0,0,0" FontSize="25">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Записанное время" Width="300"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Page>

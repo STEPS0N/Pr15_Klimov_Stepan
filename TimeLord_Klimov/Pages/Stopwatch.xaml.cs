@@ -79,5 +79,18 @@ namespace TimeLord_Klimov.Pages
                 start.Content = "Старт";
             }
         }
+
+        private void RecordTime(object sender, RoutedEventArgs e)
+        {
+            if (start_stopwatch == true)
+            {
+                string times = time.Content.ToString();
+                lv_seconswitch.Items.Add(times);
+            }
+            else
+            {
+                MessageBox.Show("Таймер остановлен!");
+            }
+        }
     }
 }
