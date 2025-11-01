@@ -92,5 +92,12 @@ namespace TimeLord_Klimov.Pages
                 MessageBox.Show("Таймер остановлен!");
             }
         }
+
+        private void GoToTimer(object sender, RoutedEventArgs e)
+        {
+            dispatcherTimer.Stop();
+            start_stopwatch = false;
+            NavigationService.Navigate(new Timer());
+        }
     }
 }

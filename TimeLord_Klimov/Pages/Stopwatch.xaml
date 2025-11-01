@@ -9,12 +9,13 @@
       Title="Stopwatch">
 
     <Grid Background="PeachPuff">
+        <Label Content="Секундомер" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Foreground="DarkSlateGray" FontSize="20" FontWeight="Bold"/>
         <Label x:Name="time" Content="00.00.00"
-               Margin="137,82,459,254" Foreground="DarkSlateGray" FontSize="48"/>
+               Margin="136,131,460,205" Foreground="DarkSlateGray" FontSize="48"/>
         <Button x:Name="start" Click="StartStopwatch" Content="Начать" HorizontalAlignment="Left" VerticalAlignment="Top"
-               Margin="118,299,0,0" Width="100" Height="25" Background="White" Foreground="DarkSlateGray"/>
+               Margin="41,284,0,0" Width="100" Height="25" Background="White" Foreground="DarkSlateGray"/>
         <Button Content="Интервал" x:Name="remember" Click="RecordTime" HorizontalAlignment="Left" VerticalAlignment="Top"
-               Margin="248,299,0,0" Width="100" Height="25" Background="White" Foreground="DarkSlateGray"/>
+               Margin="171,284,0,0" Width="100" Height="25" Background="White" Foreground="DarkSlateGray"/>
         <ListView x:Name="lv_seconswitch" Margin="478,0,0,0" FontSize="25">
             <ListView.View>
                 <GridView>
@@ -22,5 +23,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button Content="Перейти к таймеру" Click="GoToTimer" HorizontalAlignment="Left" VerticalAlignment="Top"
+                Margin="301,284,0,0" Width="120" Height="25" Background="White" Foreground="DarkSlateGray"/>
     </Grid>
 </Page>

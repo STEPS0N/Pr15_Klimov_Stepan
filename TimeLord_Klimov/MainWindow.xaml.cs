@@ -20,7 +20,7 @@ namespace TimeLord_Klimov
         {
             InitializeComponent();
 
-            OpenPages(pages.stopwatch, pages.timer);
+            OpenPageStopwatch(pages.stopwatch);
         }
 
         public enum pages
@@ -29,17 +29,30 @@ namespace TimeLord_Klimov
             timer
         }
 
-        public void OpenPages(pages _page, pages _timer)
+        public void OpenPageStopwatch(pages _page)
         {
             if (_page == pages.stopwatch)
             {
                 frame.Navigate(new Pages.Stopwatch());
             }
+        }
 
-            else if (_timer == pages.timer)
+        public void OpenPageTimer(pages _page)
+        {
+            if (_page == pages.timer)
             {
                 frame.Navigate(new Pages.Timer());
             }
+        }
+
+        private void StopwatchMenu_Click(object sender, RoutedEventArgs e)
+        {
+            frame.Navigate(new Pages.Stopwatch());
+        }
+
+        private void TimerMenu_Click(object sender, RoutedEventArgs e)
+        {
+            frame.Navigate(new Pages.Timer());
         }
     }
 }
