@@ -5,20 +5,43 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TimeLord_Klimov.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="410" d:DesignWidth="782" MinHeight="410" MinWidth="782" MaxHeight="410" MaxWidth="782"
+      Height="450" Width="800" MinHeight="450" MinWidth="800"
       Title="Timer">
 
     <Grid Background="PeachPuff">
-        <Label Content="Таймер" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" Foreground="DarkSlateGray" FontSize="20" FontWeight="Bold"/>
-        <Label Content="Введите время:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="114,158,0,0" Foreground="DarkSlateGray" FontSize="20" FontWeight="Bold"/>
-        <TextBox x:Name="reg_text" HorizontalAlignment="Left" Margin="114,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" Height="32" FontSize="20"/>
-        <Label x:Name="time" Content="00.00.00"
-           Margin="447,105,149,231" Foreground="DarkSlateGray" FontSize="48"/>
-        <Button x:Name="start" Click="StartTimer" Content="Начать" HorizontalAlignment="Left" VerticalAlignment="Top"
-           Margin="421,252,0,0" Width="100" Height="25" Background="White" Foreground="DarkSlateGray"/>
-        <Button Content="Перейти к секундомеру" Click="GoToStopwatch" HorizontalAlignment="Left" VerticalAlignment="Top"
-            Margin="540,252,0,0" Width="151" Height="25" Background="White" Foreground="DarkSlateGray"/>
-        <Button Content="Сбросить" Click="ResetTimer" HorizontalAlignment="Left" VerticalAlignment="Top"
-            Margin="500,292,0,0" Width="80" Height="25" Background="White" Foreground="DarkSlateGray"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Таймер" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,10,0,0" 
+               Foreground="DarkSlateGray" FontSize="20" FontWeight="Bold" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label Content="Введите время:" HorizontalAlignment="Center" 
+                   Foreground="DarkSlateGray" FontSize="20" FontWeight="Bold" Margin="0,0,0,20"/>
+            <TextBox x:Name="reg_text" Text="00:00:00" HorizontalAlignment="Center" 
+                     TextWrapping="Wrap" Width="203" Height="32" FontSize="20" Margin="0,0,0,30"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label x:Name="time" Content="00:00:00" HorizontalAlignment="Center"
+                   Foreground="DarkSlateGray" FontSize="48" Margin="0,0,0,30"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="start" Click="StartTimer" Content="Начать" 
+                       Width="100" Height="30" Background="White" Foreground="DarkSlateGray" Margin="5"/>
+                <Button Content="Сбросить" Click="ResetTimer" 
+                       Width="80" Height="30" Background="White" Foreground="DarkSlateGray" Margin="5"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" 
+                    HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20">
+            <Button Content="Перейти к секундомеру" Click="GoToStopwatch" 
+                   Width="151" Height="30" Background="White" Foreground="DarkSlateGray" Margin="5"/>
+        </StackPanel>
     </Grid>
 </Page>

@@ -23,6 +23,7 @@ namespace TimeLord_Klimov.Pages
     {
         public DispatcherTimer dispatcherTimer = new DispatcherTimer();
         public float full_second = 0;
+        private float lastTime = 0;
         public bool start_stopwatch = false;
 
         public Stopwatch()
@@ -84,8 +85,10 @@ namespace TimeLord_Klimov.Pages
         {
             if (start_stopwatch == true)
             {
-                string times = time.Content.ToString();
-                lv_seconswitch.Items.Add(times);
+                float interval = full_second - lastTime;
+                lastTime = full_second;
+                string formattedInterval = interval.ToString();
+                lv_seconswitch.Items.Add($"{formattedInterval} сек.");
             }
             else
             {
